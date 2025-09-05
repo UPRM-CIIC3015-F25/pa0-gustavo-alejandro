@@ -23,7 +23,7 @@ def ball_movement():
         if abs(ball.bottom - player.top) < 10:  # Check if ball hits the top of the paddle
             # TODO Task 2: Fix score to increase by 1
             score += 1  # Increase player score
-            ball_speed_y *= -1  # Reverse ball's vertical direction
+            ball_speed_y *= -1.1 # Reverse ball's vertical direction
             # TODO Task 6: Add sound effects HERE
             pygame.mixer.init()
             hit_sound = pygame.mixer.Sound("Sly_2_-_Band_of_Thieves_(USA).iso_13932.wav")
