@@ -6,6 +6,7 @@ def ball_movement():
     """
     global ball_speed_x, ball_speed_y, score, start
 
+
     # Move the ball
     ball.x += ball_speed_x
     ball.y += ball_speed_y
@@ -17,6 +18,8 @@ def ball_movement():
         ball_speed_x = speed * random.choice((1, -1))  # Randomize initial horizontal direction
         ball_speed_y = speed * random.choice((1, -1))  # Randomize initial vertical direction
         start = False
+
+
 
     # Ball collision with the player paddle
     if ball.colliderect(player):
@@ -96,6 +99,7 @@ start = False  # Indicates if the game has started
 
 # Main game loop
 while True:
+
     # Event handling
     # TODO Task 4: Add your name
     name = "Gustavo"
@@ -115,6 +119,8 @@ while True:
                 player_speed += 6  # Stop moving left
             if event.key == pygame.K_RIGHT:
                 player_speed -= 6  # Stop moving right
+
+
 
     # Game Logic
     ball_movement()
