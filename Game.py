@@ -1,4 +1,6 @@
 import pygame, sys, random
+from pygame.examples.audiocapture import sound
+
 
 def ball_movement():
     """
@@ -25,6 +27,12 @@ def ball_movement():
             score +=1 # Increase player score
             ball_speed_y *= -1  # Reverse ball's vertical direction
             # TODO Task 6: Add sound effects HERE
+            pygame.mixer.init()
+            pygame.mixer.Sound.play(sound)
+            hit_sound = pygame.mixer.Sound("Sly_2_-_Band_of_Thieves_(USA).iso_13932.wav")
+            hit_sound.play()
+
+
 
     # Ball collision with top boundary
     if ball.top <= 0:
