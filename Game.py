@@ -81,7 +81,7 @@ player_width = 200
 player = pygame.Rect(screen_width/2 - 45, screen_height - 20, player_width, player_height)  # Player paddle
 
 # Game Variables
-ball_speed_x = 7
+ball_speed_x = 5
 ball_speed_y = 0
 player_speed = 0
 
