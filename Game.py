@@ -1,6 +1,4 @@
 import pygame, sys, random
-from pygame.examples.audiocapture import sound
-
 
 def ball_movement():
     """
@@ -24,15 +22,9 @@ def ball_movement():
     if ball.colliderect(player):
         if abs(ball.bottom - player.top) < 10:  # Check if ball hits the top of the paddle
             # TODO Task 2: Fix score to increase by 1
-            score +=1 # Increase player score
+            score += 1  # Increase player score
             ball_speed_y *= -1  # Reverse ball's vertical direction
             # TODO Task 6: Add sound effects HERE
-            pygame.mixer.init()
-            pygame.mixer.Sound.play(sound)
-            hit_sound = pygame.mixer.Sound("Sly_2_-_Band_of_Thieves_(USA).iso_13932.wav")
-            hit_sound.play()
-
-
 
     # Ball collision with top boundary
     if ball.top <= 0:
@@ -84,12 +76,12 @@ bg_color = pygame.Color('grey12')
 # Game Rectangles (ball and player paddle)
 ball = pygame.Rect(screen_width / 2 - 15, screen_height / 2 - 15, 30, 30)  # Ball (centered)
 # TODO Task 1 Make the paddle bigger
-player_height = 20
-player_width = 150
+player_height = 15
+player_width = 200
 player = pygame.Rect(screen_width/2 - 45, screen_height - 20, player_width, player_height)  # Player paddle
 
 # Game Variables
-ball_speed_x = 0
+ball_speed_x = 7
 ball_speed_y = 0
 player_speed = 0
 
@@ -103,7 +95,7 @@ start = False  # Indicates if the game has started
 while True:
     # Event handling
     # TODO Task 4: Add your name
-    name = "Alejandro"
+    name = "Gustavo"
     for event in pygame.event.get():
         if event.type == pygame.QUIT:  # Quit the game
             pygame.quit()
@@ -126,7 +118,7 @@ while True:
     player_movement()
 
     # Visuals
-    light_grey = pygame.Color('grey83')
+    light_grey = pygame.Color('brown3')
     red = pygame.Color('red')
     screen.fill(bg_color)  # Clear screen with background color
     pygame.draw.rect(screen, light_grey, player)  # Draw player paddle
